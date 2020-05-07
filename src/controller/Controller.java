@@ -99,9 +99,9 @@ public class Controller {
 				SimpleDateFormat sdf2 = new SimpleDateFormat("yyy-MM-dd");
 				Date f2 = new Date();
 				f2=	sdf2.parse(fecha2);
-				Queue<Comparendo> respuestaa = new Queue<>();
-				respuestaa = modelo.req3A(f1,f2,localidad);
-				for (Comparendo iterabl : respuestaa) {
+				Queue<Comparendo> respuestaFINAL = new Queue<>();
+				respuestaFINAL = modelo.req3A(f1,f2,localidad);
+				for (Comparendo iterabl : respuestaFINAL) {
 					view.printMessage(iterabl.darDatos());
 				}
 				break;
@@ -129,8 +129,8 @@ public class Controller {
 				String tipo = lector.next();
 				view.printMessage("Ingresar una clase");
 				String clase = lector.next();
-				respuestaa = modelo.req2B(detecion, clase, tipo, localidad2b);
-				for (Comparendo iterabl : respuestaa) {
+				Queue<Comparendo>respuestaaaa = modelo.req2B(detecion, clase, tipo, localidad2b);
+				for (Comparendo iterabl : respuestaaaa) {
 					view.printMessage(iterabl.darDatos());
 				}
 				break;
@@ -146,7 +146,7 @@ public class Controller {
 				String lat2 = lector.next();
 				double latitud2 = Double.parseDouble(lat2);
 				Queue<Comparendo> respuestaas = new Queue<>();
-				respuestaa = modelo.req3B(latitud1, latitud2, tipo3B);
+				respuestaas = modelo.req3B(latitud1, latitud2, tipo3B);
 				for (Comparendo iterabl : respuestaas) {
 					view.printMessage(iterabl.darDatos());
 				}
